@@ -1,0 +1,27 @@
+.game-frame {
+    width: 600px;
+    height: 500px;
+    background-color: #555;
+    display: block;
+    margin: auto;
+    margin-top: 20vh;
+    padding-top: 10px;
+}
+
+.game-frame>.output-screen {
+    width: 500px;
+    height: 100px;
+    display: block;
+    margin: auto;
+    padding: 20px;
+    background-color: whitesmoke;
+
+
+}
+
+.game-frame>.start {
+    display: block;
+    margin: auto;
+
+
+}
