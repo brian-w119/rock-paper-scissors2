@@ -1,29 +1,32 @@
 
-var result1 = "The overall winner is the computer";
-var result2 = "The overall winner is the user";
+
+var result1 = "The overall winner is the COMPUTER";
+
+var result2 = "The overall winner is the USER";
+
 var result3 = "There isn't an overall winner";
 
-var pcS; // pc choice defined
+
+var pcS; //computer select variable
 var userI; // user choice defined
 
-choice = ["rock", "paper", "scissors", "paper", "scissors", "rock", "paper"]; // options
+choice = ["rock", "paper", "scissors", "paper", "scissors", "rock", "paper"]; // options 
 
-//the below 3 variables are the counter variables that are initialised
+var tie = 0;
 var count = 0;
 var pcWins = 0;
 var userWins = 0;
+//var resetG = false;
+var resultFinal;
+
 
 function userSelect() {  // function for user to select
     userI = prompt("Please select either ROCK, PAPER or SCISSORS: ");
-    userI = userI.toLowerCase();  //all inputs are converted to lower case
+    userI = userI.toLowerCase();
     return userI;
 }
 
-
-
 function playRound() { //function for each round
-
-
 
     function pcChoice() {         // function for computer selection
         pcS = Math.floor(Math.random() * 7);
@@ -35,37 +38,67 @@ function playRound() { //function for each round
 
         case "rock":
             if (userI == "scissors") {
-                console.log("The computer wins this round.Rock smashes Scissors");
+                result = `Round ${count + 1}:
+            The COMPUTER wins.Rock smashes Scissors`;
+                console.log(result);
                 pcWins++;
+
             } else if (userI == "paper") {
-                console.log("The user wins this round.Paper smothers Rock");
+                result = `Round ${count + 1}:
+            The USER wins.Paper smothers Rock`;
+                console.log(result);
                 userWins++;
+
             } else {
-                console.log("This round is a draw.Both the computer and user chose the same option");
+                result = `Round ${count + 1}:
+            This is a DRAW.Both users chose the same`;
+                console.log(result);
+                tie++;
+
             }
             break;
 
         case "paper":
             if (userI == "rock") {
-                console.log("The computer wins this round.Paper smothers Rock");
+                result = `Round ${count + 1}:
+            The COMPUTER wins.Paper smothers Rock`;
+                console.log(result);
                 pcWins++;
+
             } else if (userI == "scissors") {
-                console.log("The user wins this round.Scissors cuts paper");
+                result = `Round ${count + 1}:
+            The USER wins.Scissors cuts paper`
+                console.log(result);
                 userWins++;
+
             } else {
-                console.log("This round is a draw.Both the computer and user chose the same option");
+                result = `Round ${count + 1}:
+            This round is a DRAW.Both users chose the same`
+                console.log(result);
+                tie++;
+
             }
             break;
 
         case "scissors":
             if (userI == "paper") {
-                console.log("The computer wins this round. Scissors cuts paper");
+                result = `Round ${count + 1}:The COMPUTER wins.
+            Scissors cuts paper`
+                console.log(result);
                 pcWins++;
+
+
             } else if (userI == "rock") {
-                console.log("The user wins this round. Rock smashes Scissors");
+                result = `Round ${count + 1}:The USER wins. 
+            Rock smashes Scissors`
+                console.log(result);
                 userWins++;
+
             } else {
-                console.log("This round is a draw.Both the computer and user chose the same option");
+                result = `Round ${count + 1}:This round is a DRAW.
+            Both users chose the same`
+                console.log(result);
+                tie++;
             }
             break;
 
@@ -73,21 +106,91 @@ function playRound() { //function for each round
 
 }
 
+
+
 function game() {  // this function plays 5 rounds
-    while (count < 5) { // the while loop plays 5 rounds
-        userSelect();  // the computer select function is invoked
-        playRound();   // the user select function is invoked
+
+    while (count < 5) {
+        userSelect();
+        playRound();
         count++;
+
+        // the below 5 lines of code writes the results to the screen:
+
+        var createEl = document.createElement("div");// a div is created to facilitate the   output of each round
+        createEl.innerHTML = result;
+        var attachDiv = document.querySelector(".display");// selects parent "display" 
+        attachDiv.appendChild(createEl);// attaches new div to ".display" parent.
+        console.log(attachDiv);
     }
 
-    if (pcWins > userWins) { // if statements to determine overall winner
-        console.log(result1);
+
+    if ((pcWins > userWins) && (pcWins >= tie)) { // "if" statements to determine overall winner
+        resultFinal = result1;
+        console.log(resultFinal);
+
+    } else if (pcWins > userWins) {
+        resultFinal = result1;
+        console.log(resultFinal);
+
+    } else if ((userWins > pcWins) && (userWins >= tie)) {
+        resultFinal = result2;
+        console.log(resultFinal);
+
+
     } else if (userWins > pcWins) {
-        console.log(result2);
-    } else {
-        console.log(result3);
-    }
+        resultFinal = result2;
 
+
+
+    } else {
+        resultFinal = result3;
+        console.log(resultFinal);
+    }
+    var createEl2 = document.createElement("div");// a div is created to facilitate the output of overall winner
+    createEl2.innerHTML = resultFinal;
+    var attachDiv2 = document.querySelector(".display");// selects parent "display" 
+    attachDiv2.appendChild(createEl2);// attaches new div to ".display" parent.
+    console.log(attachDiv2);
 }
 
-game();  // game initiation function invoked
+
+function reset() { // this function stops the game and clears the screen
+
+    const clearScreen = document.querySelector(".display");
+    while (clearScreen.firstChild) {
+        clearScreen.removeChild(clearScreen.firstChild);
+    }
+    count = 0; //this resets the counter to zero when "reset"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

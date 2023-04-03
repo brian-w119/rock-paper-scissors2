@@ -1,27 +1,63 @@
-.game-frame {
-    width: 600px;
-    height: 500px;
-    background-color: #555;
+body{
+    color:
+      
+  }
+  .game-frame{   /*creation of game frame*/
+    border-style: outset;
     display: block;
-    margin: auto;
-    margin-top: 20vh;
-    padding-top: 10px;
-}
-
-.game-frame>.output-screen {
     width: 500px;
-    height: 100px;
-    display: block;
+    height: 500px;
+    background: silver;
     margin: auto;
-    padding: 20px;
-    background-color: whitesmoke;
-
-
-}
-
-.game-frame>.start {
-    display: block;
+    }
+  
+  
+  
+  .game-control{
+    display: flex;
+    justify-content: center;
+    padding-top: 150px;
+  }
+  
+  .play{ /* create space between the two control buttons*/
+  margin-right: 10px;}
+  
+  .display{
+    width: 400px;
+    height: 217px;
+    border: 3px solid;
     margin: auto;
-
-
-}
+    margin-top: 30px;
+    background: rgb(185, 205, 225);
+    border-style: inset;
+    border-radius: 10px;
+   overflow: hidden;
+  }
+  
+  .press-start{
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    
+  }
+  
+  .rules {
+   padding-bottom: 
+   margin: auto;
+   display: flex;
+   }
+  
+  .display > img{
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+   

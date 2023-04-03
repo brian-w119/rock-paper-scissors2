@@ -3,36 +3,38 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width" , initial-scale="1.0">
-
-    <title>A simple game of Rock, Paper, Scissors</title>
-
+    <title>Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
+    <sript src="play.js"></sript>
 </head>
 
+
 <body>
+    <div class="rules">
+        Rules:
+        <ul>
+            <li>Rock smashes scissors</li>
+            <li>Scissors cuts paper</li>
+            <li>Paper covers rock</li>
+        </ul><br />
+    </div>
+    <div class="instructions">
+        Press "Play" button to begin.<br />
+        To reset game press "Reset" button
+    </div>
 
     <div class="game-frame">
 
-        <div class="output-screen"></div>
+        <div class="display"></div>
 
-        <button class="start">START</button>
+        <div class="game-control">
+            <button class="play" onclick="game()">Play</button>
+            <button class="stop" onclick="reset()">Reset</button>
+        </div>
+
     </div>
+    <script src="play.js">
+    </script>
 
-
-
-    </div>
-
-</body>
-
-
-
-
-
-
-
-
-
-
-
-</html>
+    <body>
+        <html>
