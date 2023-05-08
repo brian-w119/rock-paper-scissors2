@@ -1,63 +1,124 @@
-body{
-    color:
-      
-  }
-  .game-frame{   /*creation of game frame*/
-    border-style: outset;
-    display: block;
-    width: 500px;
-    height: 500px;
-    background: silver;
+.game-frame {
+  /*creation of game frame*/
+  border-style: outset;
+  display: block;
+  width: 500px;
+  height: 500px;
+  background: #2d414e;
+  margin: auto;
+}
+
+
+
+.game-control {
+  display: flex;
+  justify-content: center;
+  padding-top: 100px;
+
+}
+
+.play {
+  /* create space between the two control buttons*/
+  margin-right: 10px;
+}
+
+.display {
+  width: 400px;
+  height: 217px;
+  border: 3px solid;
+  margin: auto;
+  margin-top: 30px;
+  background: #c2cad6;
+  border-style: inset;
+  border-radius: 10px;
+  overflow: hidden;
+
+}
+
+.press-start {
+  display: flex;
+  justify-content: center;
+  max-width: 300px;
+
+}
+
+.rules {
+  padding-bottom:
     margin: auto;
-    }
-  
-  
-  
-  .game-control{
-    display: flex;
-    justify-content: center;
-    padding-top: 150px;
+  display: flex;
+}
+
+.display>img {
+  width: 100%;
+  height: auto;
+}
+
+.options {
+
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  justify-content: space-around;
+
+}
+
+.options>.rock {
+  width: 80px;
+  height: 20px;
+  background-color: grey;
+  color: white;
+
+
+
+}
+
+.options .paper {
+  width: 80px;
+  height: 20px;
+  background-color: grey;
+  color: white;
+}
+
+.options .scissors {
+  width: 80px;
+  height: 20px;
+  background-color: grey;
+  color: white;
+}
+
+span {
+  /*the span and keyframe styles the typewriter*/
+  animation: blinker 3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
   }
-  
-  .play{ /* create space between the two control buttons*/
-  margin-right: 10px;}
-  
-  .display{
-    width: 400px;
-    height: 217px;
-    border: 3px solid;
-    margin: auto;
-    margin-top: 30px;
-    background: rgb(185, 205, 225);
-    border-style: inset;
-    border-radius: 10px;
-   overflow: hidden;
-  }
-  
-  .press-start{
-    display: flex;
-    justify-content: center;
-    max-width: 300px;
-    
-  }
-  
-  .rules {
-   padding-bottom: 
-   margin: auto;
-   display: flex;
-   }
-  
-  .display > img{
-    width: 100%;
-    height: auto;
-    
-  }
-  
-  
-  
-  
-  
-  
-  
-  
-   
+}
+
+.round-count {
+  width: 80px;
+  height: 20px;
+  border-style: inset;
+  border-radius: 6px;
+  background-color: #c2cad6;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: -70px;
+  text-align: center;
+
+}
+
+.roundScore {
+  display: flex;
+  width: 260px;
+  height: 20px;
+  border-style: inset;
+  border-radius: 6px;
+  background-color: #c2cad6;
+  margin-top: 40px;
+  margin: auto;
+  justify-content: space-evenly;
+
+}
